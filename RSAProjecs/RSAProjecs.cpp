@@ -9,30 +9,27 @@
 #include <time.h>
 #include <random>
 #include <vector>
-#include <cryptlib.h>
-#include <integer.h>
 
 using namespace std;
-using namespace CryptoPP;
 
 
-//struct to store the modulo n and the private expoment d that makes up the private key
+//struct to store the modulo n and the private exponent d that makes up the private key
 struct privateKey {
 
     //modulo
-    int n;
+    unsigned long long n;
     //private exponent
-    int d;
+    unsigned long long d;
 
 };
 
-//struct to store the modulo n abd the public exponent that makes up the public key
+//struct to store the modulo n and the public exponent that makes up the public key
 struct publicKey {
 
     //modulo
-    int n;
+    unsigned long long n;
     //public exponent
-    int e;
+    unsigned long long e;
 
 };
 
@@ -58,9 +55,7 @@ int main()
 {
     //create a set of variables to store the plaintext, cypertext, and decyptedmessage as an integer and a string
     unsigned long long int cypherText, plainText, decryptedText;
-    string cypherTextString, plainTextString, decryptedtextString;
-    Integer cypherTextCPP, plainTextCPP, decryptedTextCPP;
-    //vector<int> cypherText, plainText, decryptedText;
+    
 
     //create an object of keypair called keys to store the public and private keys
     keyPair keys;
@@ -149,9 +144,6 @@ void generateKeys(struct keyPair &keys) {
     max = bitToInt(lengthOfNLarge);
 
     cout << endl << "max is : " << max;
-    //i believe the issue lies with the rand(0 function as the maximum number it can generate is ~37000
-
-    //when asking the use for the key size are we asking them if it should strictly be that sice of if that number of bits it the max or min size?
 
     //calculate the first prime
     do {
@@ -165,8 +157,7 @@ void generateKeys(struct keyPair &keys) {
         q = (rand() % max);
         prime = isPrime(q, 20);
     } while (prime != true && q != p);
-
-    
+ 
 
     //calculate n and phi;
     n = p * q;
@@ -179,10 +170,6 @@ void generateKeys(struct keyPair &keys) {
     keys.pub.n = n;
 
     //select a random integer 'e' such that 1<e<phi, gcd(e, phi) =1
-   /* do {
-        e = rand() % phi;
-    } while (gcd(e, phi) != 1);*/
-
     for (int i = phi - 1; i > 1; i--) {
         e = rand() % phi;
         if (gcd(e, phi) == 1) {
@@ -200,10 +187,6 @@ void generateKeys(struct keyPair &keys) {
     keys.pub.e = e;
 
     //find d for the private key
-    /*do {
-        d = rand() % phi;
-    } while ((e*d)%phi != 1);*/
-
     for (int i = phi - 1; i > 1; i--) {
         d = rand() % phi;
         if ((e*d) % phi ==1){
@@ -215,17 +198,16 @@ void generateKeys(struct keyPair &keys) {
         }
     }
 
-
     //enter d into the private key
     keys.priv.d = d;
 
     //done generating the keys.
 
     //DEBUG force the key parameters
-   /* keys.priv.n = 119;
-    keys.priv.d = 77;
-    keys.pub.n = 119;
-    keys.pub.e = 5;*/
+    //keys.priv.n = 119;
+    //keys.priv.d = 77;
+    //keys.pub.n = 119;
+    //keys.pub.e = 5;
 
     //DEBUG see what p and q is
     cout << endl << "prime p is: " << p;
@@ -268,9 +250,7 @@ unsigned long long int RSAEncryption(unsigned long long int plainText, struct ke
     unsigned long long int cypherText;
 
     //c=m^e (mod n)
-    //cypherText = pow(plainText, keys.pub.e);
    // cout << endl << "cypher text after power is : " << cypherText;
-    //cypherText = cypherText % keys.pub.n;
     cypherText = modExp(plainText, keys.pub.e, keys.pub.n);
 
     return cypherText;
@@ -280,8 +260,8 @@ unsigned long long int RSAEncryption(unsigned long long int plainText, struct ke
 //perform the RSA decryption
 unsigned long long int RSADecryption(unsigned long long int cypherText, struct keyPair keys) {
    unsigned long long int decryptedMessage;
-    cout << endl << "decrypted message before power : " << cypherText;
-    cout << endl << " the private key d is :" << keys.priv.d;
+    //cout << endl << "decrypted message before power : " << cypherText;
+    //cout << endl << " the private key d is :" << keys.priv.d;
     decryptedMessage = modExp(cypherText, keys.priv.d, keys.priv.n);
     //cout << endl << "decrypt after power is : " << decryptedMessage;
 

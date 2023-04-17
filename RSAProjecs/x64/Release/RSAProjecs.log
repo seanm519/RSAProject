@@ -1,15 +1,11 @@
 ﻿  RSAProjecs.cpp
-C:\Users\seanm\Desktop\RSAProjecs\RSAProjecs\RSAProjecs.cpp(178,19): warning C4244: '=': conversion from 'unsigned __int64' to 'int', possible loss of data
-C:\Users\seanm\Desktop\RSAProjecs\RSAProjecs\RSAProjecs.cpp(179,18): warning C4244: '=': conversion from 'unsigned __int64' to 'int', possible loss of data
-C:\Users\seanm\Desktop\RSAProjecs\RSAProjecs\RSAProjecs.cpp(186,16): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'int', possible loss of data
-C:\Users\seanm\Desktop\RSAProjecs\RSAProjecs\RSAProjecs.cpp(200,18): warning C4244: '=': conversion from 'unsigned __int64' to 'int', possible loss of data
-C:\Users\seanm\Desktop\RSAProjecs\RSAProjecs\RSAProjecs.cpp(207,16): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'int', possible loss of data
-C:\Users\seanm\Desktop\RSAProjecs\RSAProjecs\RSAProjecs.cpp(220,19): warning C4244: '=': conversion from 'unsigned __int64' to 'int', possible loss of data
-C:\Users\seanm\Desktop\RSAProjecs\RSAProjecs\RSAProjecs.cpp(135,37): warning C4101: 'NLarge2': unreferenced local variable
-C:\Users\seanm\Desktop\RSAProjecs\RSAProjecs\RSAProjecs.cpp(135,28): warning C4101: 'NLarge1': unreferenced local variable
+C:\Users\seanm\RSAProject\RSAProjecs\RSAProjecs.cpp(173,16): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Users\seanm\RSAProject\RSAProjecs\RSAProjecs.cpp(190,16): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Users\seanm\RSAProject\RSAProjecs\RSAProjecs.cpp(130,37): warning C4101: 'NLarge2': unreferenced local variable
+C:\Users\seanm\RSAProject\RSAProjecs\RSAProjecs.cpp(130,28): warning C4101: 'NLarge1': unreferenced local variable
   Generating code
-  0 of 423 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  2 of 407 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  RSAProjecs.vcxproj -> C:\Users\seanm\Desktop\RSAProjecs\x64\Release\RSAProjecs.exe
+  RSAProjecs.vcxproj -> C:\Users\seanm\RSAProject\x64\Release\RSAProjecs.exe
