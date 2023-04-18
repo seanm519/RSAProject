@@ -268,4 +268,3 @@ unsigned long long int RSADecryption(unsigned long long int cypherText, struct k
     return decryptedMessage;
 }
 
-//example https://condor.depaul.edu/ichu/csc415/notes/notes4/rsa.html
