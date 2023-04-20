@@ -84,7 +84,7 @@ int main()
 
 }
 
-//check the primality using fermat's primality test where n in the number to check and k in the number if itterations to run
+//check the primality using the miller-rabin primality test where n in the number to check and k is the number if itterations to run
 bool isPrime(unsigned long long int n, unsigned long long int k)
 {
     do {
