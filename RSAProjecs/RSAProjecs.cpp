@@ -143,7 +143,7 @@ void generateKeys(struct keyPair &keys) {
     //find out the largest number that can be represented by the users chosen bit size
     max = bitToInt(lengthOfNLarge);
 
-    cout << endl << "max is : " << max;
+    //cout << endl << "max is : " << max;
 
     //calculate the first prime
     do {
@@ -181,7 +181,7 @@ void generateKeys(struct keyPair &keys) {
         }
     }
 
-    cout << endl << "randome integer e is " << e;
+    //cout << endl << "randome integer e is " << e;
    
     //enter e into the public key
     keys.pub.e = e;
@@ -204,21 +204,21 @@ void generateKeys(struct keyPair &keys) {
     //done generating the keys.
 
     //DEBUG force the key parameters
-    //keys.priv.n = 119;
-    //keys.priv.d = 77;
-    //keys.pub.n = 119;
-    //keys.pub.e = 5;
+    //keys.priv.n = 33;
+    //keys.priv.d = 7;
+    //keys.pub.n = 33;
+    //keys.pub.e = 3;
 
     //DEBUG see what p and q is
-    cout << endl << "prime p is: " << p;
-    cout << endl << "prime q is: " << q;
+    //cout << endl << "prime p is: " << p;
+    //cout << endl << "prime q is: " << q;
     //DEBUG see what n and phi is
-    cout << endl << "n is " << keys.priv.n;
-    cout << endl << "phi is " << phi;
+    //cout << endl << "n is " << keys.priv.n;
+    //cout << endl << "phi is " << phi;
     //DEBUG display the max number
     cout << endl << "the max number that can be encrypted is: " << keys.priv.n;
     //DEBUG see what d is
-    cout << endl << "d is " << d;
+    //cout << endl << "d is " << d;
 
 
 }
@@ -235,13 +235,13 @@ unsigned long long int bitToInt(unsigned long long int numBits) {
 //calcualtes the gcd by using the eucligian algoritm
 //DEBUG, the cout should be called several times as the gcd function is called several times in order to fund a gcd of 1, the last cout will be the correct one to look at
 unsigned long long int gcd(unsigned long long int a, unsigned long long int b) {
-    cout << endl << "the gcd of " << a << " and " << b << " is ";
+    //cout << endl << "the gcd of " << a << " and " << b << " is ";
     while (b != 0) {
         unsigned long long int remainder = a % b;
         a = b;
         b = remainder;
     }
-    cout << a;
+    //cout << a;
     return a;
 }
 
